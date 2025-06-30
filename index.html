@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Scorer Tool</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Scorer Tool</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" required>
+            <button type="submit">Upload & Score</button>
+        </form>
+        {% if feedback %}
+            <div class="results">
+                <div class="left-panel">
+                    <h2>Feedback</h2>
+                    <pre>{{ feedback }}</pre>
+                </div>
+                <div class="right-panel">
+                    <h2>Resume Text Preview</h2>
+                    <pre>{{ pdf_text }}</pre>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
